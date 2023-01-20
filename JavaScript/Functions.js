@@ -6,7 +6,6 @@ function display() {;
     str = ''
     var str1 = '';
     var str2 = '';
-    var day = '';
     var count1 = 0;
     var count2 = 0;
     var present = document.getElementsByClassName('left');
@@ -34,7 +33,7 @@ function display() {;
     }
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let currentDate = new Date().toLocaleDateString("en-US", options);
-    str += currentDate + '\n';
+    str += document.getElementById('section').innerText + ' Attendance \n';
     if (count1 == 1)
         str += "Presentees (" + count1 + "  Member)\n";
     else
@@ -45,27 +44,14 @@ function display() {;
     else
         str += "Absentees (" + count2 + "  Members)\n";
     str += str2 + '\n';
-    switch (new Date().getHours()) {
-        case 9:
-            day = "In First Hour.";
-            break;
-        case 10:
-            day = "In Second Hour.";
-            break;
-        case 11:
-            day = "In Third Hour.";
-            break;
-        case 12:
-            day = "In Fourth Hour.";
-            break;
-        case 14:
-            day = "In Fifth Hour.";
-            break;
-        case 15:
-            day = "In Sixth Hour.";
-            break;
-    }
-    str += day;
+
+    let select = document.getElementById("subject");
+    subject = select.value;
+    select.addEventListener('change', event => {
+        subject = select.value;
+    })
+
+    str += "in " + subject + " Class on " + currentDate + '\n';
     document.getElementById('display').value = str;
 
     //Display Border colour 
@@ -114,6 +100,5 @@ document.getElementById("reset").addEventListener('click', function () {
     }
     document.getElementById('display').value = '';
     document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
-    // document.getElementById('Details').textContent = 'Details : ';
-    // document.getElementById('subject').value = '';
+    document.getElementById('subject').value = '';
 });
