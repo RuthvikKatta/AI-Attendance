@@ -1,0 +1,372 @@
+[
+    {
+        "Id" : "20911A3502",
+        "Name" : "Abdul Omer Farooq",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3503",
+        "Name" : "A Praveen Martin",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3504",
+        "Name" : "Alugani Harshitha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3505",
+        "Name" : "A Sai Harshitha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3506",
+        "Name" : "A Srikanth",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3508",
+        "Name" : "B Tharun Kumar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3509",
+        "Name" : "Bala Sumagna",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3511",
+        "Name" : "B Sindhu",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3513",
+        "Name" : "B Shreya",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3515",
+        "Name" : "B SaiVinay Reddy",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3518",
+        "Name" : "Chepyala Tejas",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3521",
+        "Name" : "Donthula Vaishnavi",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3524",
+        "Name" : "G Shashi Vardhan",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3525",
+        "Name" : "Gade Srimanth",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3527",
+        "Name" : "G Deekshitha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3528",
+        "Name" : "J Kashinath",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3531",
+        "Name" : "Kokkonda Pranay",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3532",
+        "Name" : "Kokkula Yashmi",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3533",
+        "Name" : "Korba Nesha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3540",
+        "Name" : "M Samiksha Yadav",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3544",
+        "Name" : "Myakala Sudhakar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3546",
+        "Name" : "P Vamshi Kumar Goud",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3547",
+        "Name" : "P Dinesh Kumar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3548",
+        "Name" : "Pasham Arun",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3550",
+        "Name" : "Preksha Gupta",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3552",
+        "Name" : "S Aditya Dhanraj",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3553",
+        "Name" : "Sandepally Varshini",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3554",
+        "Name" : "Sattarshetty Tejaswi",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3555",
+        "Name" : "S Chaithrika Patel",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3556",
+        "Name" : "Shaik Asad",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3558",
+        "Name" : "Swathi Thakur",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3559",
+        "Name" : "Yelamaddi Keerthi",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3560",
+        "Name" : "Zaib Unnisa Nayeem",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3561",
+        "Name" : "Ailapuram Bhargav",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3564",
+        "Name" : "Avancha Sanjana",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3568",
+        "Name" : "Pavan Kumar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3569",
+        "Name" : "Chandana",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3572",
+        "Name" : "Srikari",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3573",
+        "Name" : "Kethana",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3574",
+        "Name" : "Rishi",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3576",
+        "Name" : "Guru Prakash",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3577",
+        "Name" : "Aishwarya",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3580",
+        "Name" : "Shiva Chaitanya",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3581",
+        "Name" : "Mahesh",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3582",
+        "Name" : "Sravan Reddy",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3584",
+        "Name" : "Sai Phanidhar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3587",
+        "Name" : "Hafsah",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3589",
+        "Name" : "Akshitha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3591",
+        "Name" : "Karthikeya",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3592",
+        "Name" : "Lohith Kumar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3593",
+        "Name" : "Harshini",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3594",
+        "Name" : "Katta Ruthvik",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3595",
+        "Name" : "Divya",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3596",
+        "Name" : "Saketh Raja",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A3597",
+        "Name" : "Nikitha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35A3",
+        "Name" : "Snigdha",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35A4",
+        "Name" : "Kalpana",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35A5",
+        "Name" : "Rithika",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35A6",
+        "Name" : "Neha Reddy",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35A8",
+        "Name" : "Yashwanth Kumar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B1",
+        "Name" : "Ratan Kumar",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B2",
+        "Name" : "Sahil Tamang",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B3",
+        "Name" : "Sathvika",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B6",
+        "Name" : "Rohith",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B7",
+        "Name" : "Praneeth Reddy",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B8",
+        "Name" : "V K Madhan",
+        "Status" : "0"
+    },
+    {
+        "Id" : "20911A35B9",
+        "Name" : "Sai Ram",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3503",
+        "Name" : "B Anjali",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3505",
+        "Name" : "E Soujanya",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3506",
+        "Name" : "K Chithra",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3508",
+        "Name" : "L Murali",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3509",
+        "Name" : "M Rahul",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3510",
+        "Name" : "Owais Hussian",
+        "Status" : "0"
+    },
+    {
+        "Id" : "21915A3512",
+        "Name" : "Anil",
+        "Status" : "0"
+    }
+]

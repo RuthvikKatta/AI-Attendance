@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5rem;
+    color: rgb(192, 192, 192);
+    text-align: center;
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+.data {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab {
+    display: grid;
+    grid-template-columns: 1fr 1.75fr 0.5fr;
+    height: 2.5rem;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+.tab::after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 1px;
+    background-color: rgb(235, 235, 235);
+    top: 2.75em;
+    left: 1rem;
+}
+
+.tab .attendance {
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab .attendance .left {
+    background-color: rgb(84, 249, 84);
+}
+
+.tab .attendance .right {
+    background-color: rgb(240, 41, 41);
+}
+
+.left,
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    transition: 350ms ease-in-out;
+    color: white;
+}
+
+.left p,
+.right p {
+    letter-spacing: 1.5px;
+    pointer-events: none;
+    cursor: default;
+}
+
+.left.Active,
+.right.Active {
+    width: 100%;
+}
+
+.left p span,
+.right p span {
+    display: none;
+}
+
+.left.Active p span,
+.right.Active p span {
+    letter-spacing: 1.5px;
+    display: contents;
+}
+
+.left.DeActive,
+.right.DeActive {
+    pointer-events: none;
+    width: 0%;
+}
+
+.left.DeActive p,
+.right.DeActive p {
+    visibility: collapse;
+}
+
+.features {
+    margin-block: 3rem;
+    width: 70%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features div {
+    display: flex;
+    flex-direction: column;
+}
+
+.features div textarea {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(165, 165, 165);
+}
+
+.features div textarea:focus {
+    outline: none;
+}
+
+.features div .copy {
+    position: relative;
+    top: -7.25rem;
+    left: 21.5rem;
+    width: fit-content;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.features div .copy:hover {
+    background-color: lightgray;
+}
+
+.features div .copy::before {
+    content: "Copied";
+    position: absolute;
+    top: -1px;
+    right: -71px;
+    background: lightgray;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: none;
+}
+
+.features div .copy::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -19px;
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    background: lightgray;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.features div .copy.active::before,
+.features div .copy.active::after {
+    display: block;
+}
+
+.features .select-subject select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(165, 165, 165);
+    background-color: white;
+}
+
+select:focus {
+    outline: none;
+}
+
+.features .buttons {
+    width: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 5px;
+}
+
+.features .buttons button {
+    height: 2.5rem;
+    width: 9rem;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: White;
+    letter-spacing: 1px;
+}
+
+.features .buttons .presentees {
+    background-color: rgb(0, 255, 221);
+}
+
+
+.features .buttons .absentees {
+    background-color: rgb(240, 41, 41);
+}
+
+.features .buttons #reset {
+    color: black;
+    background-color: rgb(251, 251, 50);
+}
+
+.features .buttons #Download {
+    width: 100%;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #49bb86;
+}
+
+.features .buttons .Whatsapp {
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-block: 5px;
+}
+
+
+
+@media (max-width : 720px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .data {
+        width: 95%;
+    }
+
+    .tab {
+        display: grid;
+        grid-template-columns: 1.75fr 0.5fr;
+        height: 3.25rem;
+        width: 100%;
+        align-items: center;
+        place-items: center;
+        margin-left: -1.5rem;
+    }
+
+    .tab::after {
+        width: 70%;
+        top: 3.5em;
+        left: 4.5rem
+    }
+
+    .tab p {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .tab p:first-child span {
+        display: none;
+    }
+
+    .tab p:nth-child(2) span {
+        display: none;
+    }
+
+    .tab .attendance {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .left.Active p span,
+    .right.Active p span {
+        display: contents;
+    }
+
+    .features {
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        gap: 2rem;
+    }
+
+    .features .buttons {
+        display: flex;
+        margin-block: 2rem;
+        gap: 7px;
+        align-items: center;
+    }
+
+    .features .buttons #Download {
+        width: max-content;
+    }
+
+    .features div .copy {
+        top: 10px;
+        left: 0px;
+    }
+}
