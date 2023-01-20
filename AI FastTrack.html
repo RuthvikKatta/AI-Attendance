@@ -14,6 +14,20 @@
 
 <body>
     <h1>Attendance</h1>
+    <h3 id="section">FastTrack</h3>
+    <div class="select-subject" style="margin-bottom: 1rem;">
+        <label for="subject"><b>Select Subject :</b></label>
+        <select id="subject">
+            <option></option>
+            <option value="CN">CN</option>
+            <option value="ANN">ANN</option>
+            <option value="NLP">NLP</option>
+            <option value="ROBOTICS">ROBOTICS</option>
+            <option value="IAI">IAI</option>
+            <option value="CC">CC</option>
+            <option value="PDBS">PDBS</option>
+        </select>
+    </div>
 
     <div class="data" id="data">
         <!-- <div class="tab">
@@ -29,11 +43,12 @@
     <div class="features">
         <div class="top">
             <label for="display">Details : </label>
-            <textarea id="display" rows="6" cols="40" style="resize: none;"></textarea>
+            <textarea id="display" rows="10" cols="40" style="resize: none;"></textarea>
             <div id="copy" class="copy">
                 <img src="https://img.icons8.com/material-outlined/48/null/copy.png" width="15px" />
             </div>
         </div>
+        
         <div class="buttons">
             <button id="reset">Reset</button>
             <button class="Whatsapp"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
