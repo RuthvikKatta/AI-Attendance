@@ -33,7 +33,7 @@ function display() {;
     }
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let currentDate = new Date().toLocaleDateString("en-US", options);
-    str += document.getElementById('section').innerText + ' Attendance \n';
+    str += document.getElementById('section').innerText + ' ( III year ) Attendance \n';
     if (count1 == 1)
         str += "Presentees (" + count1 + "  Member)\n";
     else
@@ -102,3 +102,4 @@ document.getElementById("reset").addEventListener('click', function () {
     document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
     document.getElementById('subject').value = '';
 });
+
