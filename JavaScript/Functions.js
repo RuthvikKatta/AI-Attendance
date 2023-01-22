@@ -108,3 +108,38 @@ document.getElementById("reset").addEventListener('click', function () {
     document.getElementById('subject').value = '';
 });
 
+var absent = document.getElementById('markAbsent');
+var Absent_List = [];
+absent.addEventListener('change',function(){
+    var present = document.getElementsByClassName('left');
+    if (absent.checked == true){
+        for (let one of present) {
+            if (one.getAttribute("is-present") === 'none') {
+                var leftID = one.id;
+                var RightID = leftID.substring(0, 10) + 'R';
+                Absent_List.push(leftID);
+                one.setAttribute("is-present", false);
+                document.getElementById(leftID).classList.remove('Active');
+                document.getElementById(RightID).classList.remove('DeActive');
+                document.getElementById(leftID).classList.add('DeActive');
+                document.getElementById(RightID).classList.add('Active');
+            }
+        }
+        display();
+    }
+    else {
+        console.log(Absent_List);
+        var i = 0;
+        for(let one of present){
+            if(one.id === Absent_List[i]){
+                var leftID = one.id;
+                var RightID = leftID.substring(0, 10) + 'R';
+                one.setAttribute("is-present", 'none');
+                document.getElementById(leftID).classList = "left";
+                document.getElementById(RightID).classList = "right" ;
+                i++;
+            }
+        }
+        display();
+    }   
+});
