@@ -93,6 +93,9 @@
             document.getElementById('subject').value = '';
             if (section != 'United') United = false;
             else United = true;
+            if(section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
+                document.getElementById('subject').value = 'Training and Placement';
+            }
             generate();
         })
 
