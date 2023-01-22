@@ -5,50 +5,191 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-            gap: 50px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: rgb(192, 192, 192);
-            text-align: center;
-            margin-bottom: 1rem;
-            user-select: none;
-            position: absolute;
-            top: 0px;
-        }
-
-        button {
-            padding: 15px;
-            border-radius: 20px;
-            background-color: aqua;
-            border: none;
-            font-weight: bold;
-            color: rgb(69, 69, 69);
-            letter-spacing: 1.5px;
-            font-size: 18px;
-            width: 15rem;
-        }
-
-        button:hover {
-            background-color: rgb(147, 255, 255);
-        }
-    </style>
+    <title>AI Attendance</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./JavaScript/fileSaver.js"></script>
+    <script src="./JavaScript/Functions.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.full.min.js"></script>
 </head>
 
 <body>
     <h1>Attendance</h1>
+    <h3 id="section">United AI</h3>
+    <div class="select-subject" style="margin-bottom: 1rem;">
+        <label for="Section_Batch"><b>Select Section / Batch :</b></label>
+        <select id="Section_Batch">
+            <option value="United">United AI</option>
+            <option value="FT">FastTrack</option>
+            <option value="NFT">Non FastTrack</option>
+            <option value="PBT">PBT</option>
+            <option value="SBT7">SBT Batch 7</option>
+            <option value="SBT8">SBT Batch 8</option>
+        </select>
+    </div>
+    <div class="select-subject" style="margin-bottom: 1rem;">
+        <label for="subject"><b>Select Subject :</b></label>
+        <select id="subject">
+            <option></option>
+            <option value="CN">CN</option>
+            <option value="ANN">ANN</option>
+            <option value="NLP">NLP</option>
+            <option value="ROBOTICS">ROBOTICS</option>
+            <option value="IAI">IAI</option>
+            <option value="CC">CC</option>
+            <option value="PDBS">PDBS</option>
+            <option value="ROBOTICS LAB">ROBOTICS LAB</option>
+            <option value="ANN LAB">ANN LAB</option>
+            <option value="Training and Placement">Training and Placement</option>
+        </select>
+    </div>
 
-    <button onclick="location.href='./AI FastTrack.html'">FastTrack</button>
-    <button onclick="location.href='./AI NonFastTrack.html'">Non FastTrack</button>
+    <div class="data" id="data">
+        <!-- <div class="tab">
+                <p><span>Roll Number :</span> 20911A3594</p>
+                <p><span>Name :</span> Katta Ruthvik</p>
+            <div class="attendance">
+                <div id="94L" class="left" is-present="none"><p>P<span>resent</span></p></div>
+                <div id="94R" class="right"><p>A<span>bsent</span></p></div>
+            </div> 
+        </div> -->
+
+    </div>
+    <div class="features">
+        <div class="top">
+            <label for="display">Details : </label>
+            <textarea id="display" rows="10" cols="40" style="resize: none;"></textarea>
+            <div id="copy" class="copy">
+                <img src="https://img.icons8.com/material-outlined/48/null/copy.png" width="15px" />
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="reset">Reset</button>
+            <button class="Whatsapp"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+                    width="30px" />WhatsApp</button>
+            <!-- <button id="Download"><img
+                    src="https://img.icons8.com/fluency/48/null/microsoft-excel-2019.png" width="23px" />Download As
+                Excel</button> -->
+        </div>
+    </div>
+    <script type="module">
+
+        "use strict";
+
+        // Loading AI - FastTrack Json File in Javasrcipt. 
+
+        import data from './Classes/AI.json' assert {type: 'json'};
+
+        let select = document.getElementById("Section_Batch");
+        var section = select.value;
+        var United = true;
+        generate();
+        select.addEventListener('change', function () {
+            section = select.value;
+            document.getElementById("section").innerText = select.options[select.selectedIndex].text;
+            document.getElementById('display').value = '';
+            document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
+            document.getElementById('subject').value = '';
+            if (section != 'United') United = false;
+            else United = true;
+            generate();
+        })
+
+        function generate() {
+            var e = document.querySelector(".data");
+            var child = e.lastElementChild;
+            while (child) {
+                e.removeChild(child);
+                child = e.lastElementChild;
+            }
+            for (let one of data) {
+                if (United || one.Section == section || one.Batch == section) {
+                    let NewElement = document.createElement("div");
+                    NewElement.classList.add("tab");
+                    var leftId = one.Id + 'L';
+                    var RightId = one.Id + 'R';
+                    NewElement.innerHTML = `
+                    <p><span>Roll Number :</span> ${one.Id}</p>
+                    <p><span>Name :</span> ${one.Name}</p>
+                    <div class="attendance">
+                        <div id="${leftId}" class="left" is-present="none"><p>P<span>resent</span></p></div>
+                        <div id="${RightId}" class="right"><p>A<span>bsent</span></p></div>
+                    </div> 
+                    `;
+                    document.querySelector('.data').appendChild(NewElement);
+                }
+            }
+            var left = document.getElementsByClassName('left');
+            for (let l of left) {
+                l.addEventListener('click', function () {
+                    if (l.getAttribute("is-present") === 'none' || l.getAttribute("is-present") === 'false') {
+                        l.setAttribute("is-present", true);
+                    }
+                    else {
+                        l.setAttribute("is-present", 'none');
+                    }
+                    var leftID = l.id;
+                    var RightID = leftID.substring(0, 10) + 'R';
+                    document.getElementById(leftID).classList.toggle('Active');
+                    document.getElementById(RightID).classList.toggle('DeActive');
+                    display();
+                })
+            }
+
+            var right = document.getElementsByClassName('right');
+            for (let r of right) {
+                r.addEventListener('click', function () {
+                    let l = r.previousElementSibling;
+                    if (l.getAttribute("is-present") === 'none' || l.getAttribute("is-present") === 'true') {
+                        l.setAttribute("is-present", false);
+                    }
+                    else {
+                        l.setAttribute("is-present", 'none');
+                    }
+                    var RightID = r.id;
+                    var leftID = RightID.substring(0, 10) + 'L';
+                    document.getElementById(RightID).classList.toggle('Active');
+                    document.getElementById(leftID).classList.toggle('DeActive');
+                    display();
+                });
+
+            }
+        }
+
+
+        // const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+        // const EXCEL_EXTENSION = '.xlsx';
+
+        // document.getElementById('Download').addEventListener('click', (event) => {
+        //     var j = 0;
+        //     for (let l of left) {
+        //         if (l.getAttribute("is-present") === 'true') {
+        //             data[j++]["Status"] = "Present";
+        //         }
+        //         // else if(l.getAttribute("is-present") === 'none') {
+        //         //     data[j++]["Status"] = "  -  ";
+        //         // }
+        //         else {
+        //             data[j++]["Status"] = "Absent";
+        //         }
+        //     }
+        //     const worksheet = XLSX.utils.json_to_sheet(data);
+        //     const workbook = {
+        //         Sheets: {
+        //             'data': worksheet
+        //         },
+        //         SheetNames: ['data']
+        //     };
+        //     const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        //     saveAsExcel(excelBuffer, 'Attendance(AI-B)');
+        // })
+
+        function saveAsExcel(buffer, filename) {
+            const data = new Blob([buffer], { type: EXCEL_TYPE });
+            let currentDate = new Date().toJSON().slice(0, 10);
+            saveAs(data, filename + ' on ' + currentDate + EXCEL_EXTENSION);
+        }
+    </script>
 </body>
 
 </html>
