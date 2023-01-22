@@ -255,6 +255,14 @@ select:focus {
     padding-block: 5px;
 }
 
+.developer-credit {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.developer-name {
+    font-weight: bold;
+}
 
 
 @media (max-width : 720px) {
