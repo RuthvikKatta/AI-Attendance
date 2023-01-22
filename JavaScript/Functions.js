@@ -100,6 +100,11 @@ document.getElementById("reset").addEventListener('click', function () {
     }
     document.getElementById('display').value = '';
     document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
+    let section = document.getElementById("Section_Batch").value;
+    if(section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
+        document.getElementById('subject').value = 'Training and Placement';
+        return;
+    }
     document.getElementById('subject').value = '';
 });
 
