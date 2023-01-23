@@ -129,18 +129,19 @@ absent.addEventListener('change',function(){
         display();
     }
     else {
-        console.log(Absent_List);
-        var i = 0;
-        for(let one of present){
-            if(one.id === Absent_List[i]){
-                var leftID = one.id;
-                var RightID = leftID.substring(0, 10) + 'R';
-                one.setAttribute("is-present", 'none');
-                document.getElementById(leftID).classList = "left";
-                document.getElementById(RightID).classList = "right" ;
-                i++;
-            }
-        }
-        display();
+        absent.checked = true;
+        // var i = 0;
+        // for(let one of present){
+        //     if(one.getAttribute("is-present")==='false' && one.id == Absent_List[i] ){
+        //         var leftID = one.id;
+        //         var RightID = leftID.substring(0, 10) + 'R';
+        //         one.setAttribute("is-present", 'none');
+        //         document.getElementById(leftID).classList = "left";
+        //         document.getElementById(RightID).classList = "right" ;
+        //         i++;
+        //     }
+        //     if (i == Absent_List.length) i = 0;
+        // }
+        // display();
     }   
 });
