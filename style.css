@@ -36,6 +36,7 @@ h3{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-left: 1.75rem;
 }
 
 .tab {
