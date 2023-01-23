@@ -51,7 +51,7 @@ function display() {;
         subject = select.value;
     })
 
-    str += "in " + subject + " Class on " + currentDate + '\n';
+    str += "in " + subject + " on " + currentDate + '\n';
     document.getElementById('display').value = str;
 
     //Display Border colour 
