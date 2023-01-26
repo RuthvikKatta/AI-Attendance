@@ -1,9 +1,20 @@
+var day;
+var hour = new Date().getHours();
+var min = new Date().getMinutes();
+if (hour == 9) day = "First Hour";
+else if (hour == 10) day = "Second Hour";
+else if (hour == 11) day = "Third Hour";
+else if (hour == 12 || (hour == 13 && min <=45)) day = "Fourth Hour";
+else if ((hour == 13 && min >=45) || (hour == 14 && min <=45)) day = "Fifth Hour";
+else if ((hour == 14 && min >=45) || (hour == 15 && min <=45)) day = "Fifth Hour";
+document.getElementById('schedule').value = day;
+
 // Function Display()
 
 var str;
 
-function display() {;
-    str = ''
+function display() {
+    str = '';
     var str1 = '';
     var str2 = '';
     var count1 = 0;
@@ -31,6 +42,8 @@ function display() {;
             }
         }
     }
+    str1 = str1.slice(0, -2);
+    str2 = str2.slice(0, -2);
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let currentDate = new Date().toLocaleDateString("en-US", options);
     str += document.getElementById('section').innerText + ' ( III year ) Attendance \n';
@@ -62,7 +75,7 @@ function display() {;
     else if (count1 == 0)
         document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
     else
-        document.getElementById('display').style.borderColor = '#f6f672'; 
+        document.getElementById('display').style.borderColor = '#f6f672';
 }
 
 // Whatsapp Message sender Function
@@ -102,7 +115,7 @@ document.getElementById("reset").addEventListener('click', function () {
     document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
     document.getElementById('markAbsent').checked = false;
     let section = document.getElementById("Section_Batch").value;
-    if(section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
+    if (section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
         document.getElementById('subject').value = 'Training and Placement';
         return;
     }
@@ -111,9 +124,10 @@ document.getElementById("reset").addEventListener('click', function () {
 
 var absent = document.getElementById('markAbsent');
 var Absent_List = [];
-absent.addEventListener('change',function(){
+absent.addEventListener('change', function () {
     var present = document.getElementsByClassName('left');
-    if (absent.checked == true){
+    if (absent.checked == true) {
+        Absent_List = [];
         for (let one of present) {
             if (one.getAttribute("is-present") === 'none') {
                 var leftID = one.id;
@@ -129,19 +143,17 @@ absent.addEventListener('change',function(){
         display();
     }
     else {
-        absent.checked = true;
-        // var i = 0;
-        // for(let one of present){
-        //     if(one.getAttribute("is-present")==='false' && one.id == Absent_List[i] ){
-        //         var leftID = one.id;
-        //         var RightID = leftID.substring(0, 10) + 'R';
-        //         one.setAttribute("is-present", 'none');
-        //         document.getElementById(leftID).classList = "left";
-        //         document.getElementById(RightID).classList = "right" ;
-        //         i++;
-        //     }
-        //     if (i == Absent_List.length) i = 0;
-        // }
-        // display();
-    }   
+        var i = 0;
+        for (let one of present) {
+            if (one.id == Absent_List[i]) {
+                var leftID = one.id;
+                var RightID = leftID.substring(0, 10) + 'R';
+                one.setAttribute("is-present", 'none');
+                document.getElementById(leftID).classList = "left";
+                document.getElementById(RightID).classList = "right";
+                i++;
+            }
+        }
+        display();
+    }
 });
