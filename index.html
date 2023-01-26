@@ -29,7 +29,7 @@
     <div class="select-subject" style="margin-bottom: 1rem;">
         <label for="subject"><b>Select Class :</b></label>
         <select id="subject">
-            <option></option>
+            <option value="" id="schedule"></option>
             <option value="CN Class">CN</option>
             <option value="ANN Class">ANN</option>
             <option value="NLP Class">NLP</option>
@@ -38,8 +38,7 @@
             <option value="DWDM Class">DWDM</option>
             <option value="CC Class">CC</option>
             <option value="PDBS Class">PDBS</option>
-            <option value="ROBOTICS LAB">ROBOTICS LAB</option>
-            <option value="ANN LAB">ANN LAB</option>
+            <option value="ROBOTICS/ANN LAB">ROBOTICS/ANN LAB</option>
             <option value="Training and Placement">Training and Placement</option>
         </select>
     </div>
@@ -81,7 +80,7 @@
 
         "use strict";
 
-        // Loading AI - FastTrack Json File in Javasrcipt. 
+        // Loading AI Json File into Javasrcipt. 
 
         import data from './Classes/AI.json' assert {type: 'json'};
 
@@ -163,40 +162,6 @@
                 });
 
             }
-        }
-
-
-        // const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-        // const EXCEL_EXTENSION = '.xlsx';
-
-        // document.getElementById('Download').addEventListener('click', (event) => {
-        //     var j = 0;
-        //     for (let l of left) {
-        //         if (l.getAttribute("is-present") === 'true') {
-        //             data[j++]["Status"] = "Present";
-        //         }
-        //         // else if(l.getAttribute("is-present") === 'none') {
-        //         //     data[j++]["Status"] = "  -  ";
-        //         // }
-        //         else {
-        //             data[j++]["Status"] = "Absent";
-        //         }
-        //     }
-        //     const worksheet = XLSX.utils.json_to_sheet(data);
-        //     const workbook = {
-        //         Sheets: {
-        //             'data': worksheet
-        //         },
-        //         SheetNames: ['data']
-        //     };
-        //     const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-        //     saveAsExcel(excelBuffer, 'Attendance(AI-B)');
-        // })
-
-        function saveAsExcel(buffer, filename) {
-            const data = new Blob([buffer], { type: EXCEL_TYPE });
-            let currentDate = new Date().toJSON().slice(0, 10);
-            saveAs(data, filename + ' on ' + currentDate + EXCEL_EXTENSION);
         }
     </script>
 </body>
