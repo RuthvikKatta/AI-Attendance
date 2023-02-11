@@ -56,7 +56,7 @@ function display() {
     str2 = str2.slice(0, -2);
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let currentDate = new Date().toLocaleDateString("en-US", options);
-    str += document.getElementById('section').innerText + ' ( III year ) count \n';
+    str += document.getElementById('section').innerText + ' ( III year ) Attendance \n';
     if (count1 == 1)
         str += "Presentees (" + count1 + "  Member)\n";
     else
