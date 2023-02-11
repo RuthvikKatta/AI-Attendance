@@ -38,19 +38,25 @@
             <option value="DWDM Class">DWDM</option>
             <option value="CC Class">CC</option>
             <option value="PDBS Class">PDBS</option>
-            <option value="ROBOTICS/ANN LAB">ROBOTICS/ANN LAB</option>
+            <option value="ROBOTICS/ANN LAB">ROBOTICS / ANN LAB</option>
             <option value="Training and Placement">Training and Placement</option>
-            <option value="NLP Session">NLP Session</option>
+            <option value="other">Others</option>
         </select>
     </div>
-    
+    <div id="popup" style="display: flex;gap: 5px; margin-bottom: 0.5rem;display: none;">
+        <label for="other">If Others : </label>
+        <input type="text" id="other" placeholder="Please Specify" style="padding: 2px;border-radius: 3px;">
+    </div>
+
+
+
     <div class="data" id="data">
         <!-- <div class="tab">
                 <p><span>Roll Number :</span> 20911A3594</p>
                 <p><span>Name :</span> Katta Ruthvik</p>
             <div class="attendance">
-                <div id="94L" class="left" is-present="none"><p>P<span>resent</span></p></div>
-                <div id="94R" class="right"><p>A<span>bsent</span></p></div>
+                <div id="20911A3594L" class="left" is-present="none"><p>P<span>resent</span></p></div>
+                <div id="20911A3594R" class="right"><p>A<span>bsent</span></p></div>
             </div> 
         </div> -->
     </div>
@@ -71,9 +77,6 @@
             <button id="reset">Reset</button>
             <button class="Whatsapp"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
                     width="30px" />WhatsApp</button>
-            <!-- <button id="Download"><img
-                    src="https://img.icons8.com/fluency/48/null/microsoft-excel-2019.png" width="23px" />Download As
-                Excel</button> -->
         </div>
     </div>
     <div class="developer-credit">Designed and developed by <span class="developer-name">Ruthvik Katta</span></div>
@@ -96,13 +99,15 @@
             document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
             document.getElementById('subject').value = '';
             document.getElementById('markAbsent').checked = false;
+            document.getElementById('popup').style.display = 'none';
             if (section != 'United') United = false;
             else United = true;
-            if(section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
+            if (section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
                 document.getElementById('subject').value = 'Training and Placement';
             }
             generate();
         })
+        console.log();
 
         function generate() {
             var e = document.querySelector(".data");
