@@ -272,7 +272,7 @@ select:focus {
 }
 
 
-@media (max-width : 720px) {
+@media (max-width : 500px) {
     h1 {
         font-size: 3rem;
     }
@@ -343,5 +343,40 @@ select:focus {
     .features div .copy {
         top: 10px;
         left: 0px;
+    }
+}
+
+@media (max-width : 1024px) and (min-width:520px){
+    h1 {
+        font-size: 3rem;
+    }
+    .data {
+        width: 80%;
+    }
+    .tab p:first-child span {
+        display: none;
+    }
+    .tab p:nth-child(2) span {
+        display: none;
+    }
+    .features {
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        gap: 2rem;
+    }
+    .features .buttons {
+        display: flex;
+        margin-block: 2rem;
+        gap: 7px;
+        align-items: center;
+    }
+    .features div .copy {
+        top: -180px;
+        left: 340px;
+    }
+    .left.Active p span,
+    .right.Active p span {
+        display: contents;
     }
 }
