@@ -7,17 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Attendance</title>
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./JavaScript/fileSaver.js"></script>
     <script src="./JavaScript/Functions.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.full.min.js"></script>
 </head>
 
 <body>
     <h1>Attendance</h1>
-    <h3 id="section">United AI</h3>
+    <h3 id="section">AI</h3>
     <div class="select-subject" style="margin-bottom: 1rem;">
         <label for="Section_Batch"><b>Select Section / Batch :</b></label>
         <select id="Section_Batch">
-            <option value="United">United AI</option>
+            <option value="United">AI</option>
             <option value="FT">FastTrack</option>
             <option value="NFT">Non FastTrack</option>
             <option value="PBT">PBT</option>
@@ -66,7 +67,7 @@
     <div class="features">
         <div class="top">
             <label for="display">Details : </label>
-            <textarea id="display" rows="10" cols="40" style="resize: none;"></textarea>
+            <textarea id="display" disabled="true" rows="10" cols="40" style="resize: none;"></textarea>
             <div id="copy" class="copy">
                 <img src="https://img.icons8.com/material-outlined/48/null/copy.png" width="15px" />
             </div>
@@ -76,6 +77,9 @@
             <button id="reset">Reset</button>
             <button class="Whatsapp"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
                     width="30px" />WhatsApp</button>
+            <!-- <button id="Download" onclick="json()">Push to Excel Sheet<img
+                    src="https://img.icons8.com/fluency/48/null/microsoft-excel-2019.png" width="23px" /></button>
+            <h4 id="done" style="visibility: hidden; margin-top: 10px;">Done !</h4> -->
         </div>
     </div>
     <div class="developer-credit">Designed and developed by <span class="developer-name">Ruthvik Katta</span></div>
