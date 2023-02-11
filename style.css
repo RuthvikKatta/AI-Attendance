@@ -36,6 +36,7 @@ h3{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-left: 0.5rem;
 }
 
 .tab {
@@ -254,6 +255,11 @@ select:focus {
     gap: 3px;
     padding-block: 5px;
 }
+
+.Whatsapp:hover,#Download:hover{
+    opacity: 0.8;
+}
+
 
 .developer-credit {
     font-size: 10px;
