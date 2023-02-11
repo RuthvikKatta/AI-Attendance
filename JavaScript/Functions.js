@@ -1,13 +1,22 @@
-var day;
-var hour = new Date().getHours();
-var min = new Date().getMinutes();
-if (hour == 9) day = "First Hour";
-else if (hour == 10) day = "Second Hour";
-else if (hour == 11) day = "Third Hour";
-else if (hour == 12 || (hour == 13 && min <=45)) day = "Fourth Hour";
-else if ((hour == 13 && min >=45) || (hour == 14 && min <=45)) day = "Fifth Hour";
-else if ((hour == 14 && min >=45) || (hour == 15 && min <=45)) day = "Fifth Hour";
-document.getElementById('schedule').value = day;
+var Class, hour, min;
+min = new Date().getMinutes();
+hour = new Date().getHours();
+if (hour == 9)
+    Class = "First Hour";
+else if (hour == 10)
+    Class = "Second Hour";
+else if (hour == 11)
+    Class = "Third Hour";
+else if (hour == 12 && min >= 45 || (hour == 13 && min <= 45))
+    Class = "Fourth Hour";
+else if ((hour == 13 && min >= 45) || (hour == 14 && min <= 45))
+    Class = "Fifth Hour";
+else if ((hour == 14 && min >= 45) || (hour == 15 && min <= 45))
+    Class = "Fifth Hour";
+else Class = "";
+
+document.getElementById('schedule').value = Class;
+
 
 // Function Display()
 
@@ -19,6 +28,7 @@ function display() {
     var str2 = '';
     var count1 = 0;
     var count2 = 0;
+    var subject;
     var present = document.getElementsByClassName('left');
     for (let one of present) {
         if (one.getAttribute("is-present") === 'true') {
@@ -46,7 +56,7 @@ function display() {
     str2 = str2.slice(0, -2);
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let currentDate = new Date().toLocaleDateString("en-US", options);
-    str += document.getElementById('section').innerText + ' ( III year ) Attendance \n';
+    str += document.getElementById('section').innerText + ' ( III year ) count \n';
     if (count1 == 1)
         str += "Presentees (" + count1 + "  Member)\n";
     else
@@ -63,6 +73,7 @@ function display() {
     select.addEventListener('change', event => {
         subject = select.value;
     })
+    if (subject == 'other') subject = document.getElementById('other').value;
 
     str += "in " + subject + " on " + currentDate + '\n';
     document.getElementById('display').value = str;
@@ -90,14 +101,13 @@ document.querySelector(".Whatsapp").addEventListener('click', function () {
 // Copy Function
 
 let copy = document.querySelector("#copy");
-copy.addEventListener('click', function () {
-    let input = document.querySelector("#display").select();
-    document.execCommand("copy");
+copy.addEventListener('click',async function () {
+    let input = document.querySelector("#display");
+    await navigator.clipboard.writeText(input.value);
     copy.classList.add("active");
-    window.getSelection().removeAllRanges();
     setTimeout(function () {
         copy.classList.remove("active");
-    }, 2500);
+    }, 2000);
 })
 
 // Reset Function
@@ -114,6 +124,7 @@ document.getElementById("reset").addEventListener('click', function () {
     document.getElementById('display').value = '';
     document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
     document.getElementById('markAbsent').checked = false;
+    document.getElementById('popup').style.display = 'none';
     let section = document.getElementById("Section_Batch").value;
     if (section == 'PBT' || section == 'SBT7' || section == 'SBT8') {
         document.getElementById('subject').value = 'Training and Placement';
@@ -121,6 +132,8 @@ document.getElementById("reset").addEventListener('click', function () {
     }
     document.getElementById('subject').value = '';
 });
+
+// toggle Mark Others as Absentess.
 
 var absent = document.getElementById('markAbsent');
 var Absent_List = [];
@@ -157,3 +170,15 @@ absent.addEventListener('change', function () {
         display();
     }
 });
+
+
+// Other Sessions or Classes
+
+let select = document.getElementById("subject");
+select.addEventListener('change', function () {
+    if (select.value == 'other') document.getElementById('popup').style.display = 'block';
+    else {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('other').value = '';
+    }
+})
