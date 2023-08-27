@@ -204,13 +204,21 @@ copy.addEventListener('click', async () => {
 
 document.getElementById("reset").addEventListener('click', function () {
 	const present = document.querySelectorAll('.Attendance');
+	const switchStatus = document.getElementById('switch').checked;
 	for (let one of present) {
-		one.setAttribute("is-present", 'true');
-		one.classList = "Attendance green";
+		if(switchStatus ==  false){
+			one.setAttribute("is-present", 'true');
+			one.classList = "Attendance green";
+			one.lastChild.innerHTML = "Present";
+		} else {
+			one.setAttribute("is-present", 'false');
+			one.classList = "Attendance red";
+			one.lastChild.innerHTML = "Absent";
+		}
 	}
 	document.getElementById('display').value = '';
 	document.getElementById('display').style.borderColor = 'rgb(165, 165, 165)';
-	document.getElementById('switch').checked = false;
+	document.getElementById('switch').checked = switchStatus;
 	document.getElementById('popup').style.display = 'none';
 	display();
 });
