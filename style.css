@@ -176,6 +176,49 @@ h3 {
     align-items: center;
 }
 
+.features .container{
+    margin-top: 2rem;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 18rem;
+}
+
+.features .toggle-names-switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.features .toggle-names-switch {
+    display: inline-block;
+    font-size: 20px;
+    height: 1em;
+    width: 2em;
+    background: #BDB9A6;
+    border-radius: 1em;
+}
+
+.features .toggle-names-switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #FFF;
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    transition: all 300ms;
+}
+
+.features .toggle-names-switch input:checked+div {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+.features .container .toggle-names-switch:has(> input:checked)  {
+    background:#0099ff;
+}
+
 .features div {
     display: flex;
     flex-direction: column;
@@ -199,13 +242,13 @@ h3 {
 
 .features div .copy {
     position: relative;
-    top: -7.25rem;
-    left: 21.5rem;
     width: fit-content;
     border: 2px solid lightgray;
     border-radius: 10px;
     padding: 4px;
     cursor: pointer;
+    top:-18rem;
+    left:18.75rem
 }
 
 .features div .copy:hover {
@@ -255,8 +298,7 @@ select:focus {
 
 .features .buttons {
     width: 10rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     place-items: center;
     gap: 5px;
 }
@@ -270,30 +312,13 @@ select:focus {
     border-radius: 30px;
     color: White;
     letter-spacing: 1px;
-}
-
-.features .buttons .presentees {
-    background-color: rgb(0, 255, 221);
-}
-
-
-.features .buttons .absentees {
-    background-color: rgb(240, 41, 41);
+    cursor: pointer;
 }
 
 .features .buttons #reset {
     color: black;
     background-color: rgb(251, 251, 50);
-}
-
-.features .buttons #Download {
-    width: 100%;
-    grid-column: 1/-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: #459bfe;
+    transition: scale 150ms ease-out;
 }
 
 .features .buttons .Whatsapp {
@@ -302,83 +327,12 @@ select:focus {
     align-items: center;
     gap: 3px;
     padding-block: 5px;
+    transition: scale 150ms ease-out;
 }
 
-.Whatsapp:hover,
-#Download:hover {
-    opacity: 0.8;
-}
-
-.Authentication {
-    position: absolute;
-    width: min(85%, 500px);
-    padding: 30px;
-    border-radius: 10px;
-    border: 2px solid rgb(165, 165, 165);
-    transform: translate(-100%, -50%);
-    background-color: white;
-    display: flex;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-    box-shadow: 0px 0px 300px 50px gray;
-    visibility: hidden;
-    transition: all 250ms ease-in-out;
-}
-
-.Authentication #closeIcon {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    cursor: pointer;
-}
-
-.Authentication p span {
-    text-transform: uppercase;
-    color: rgb(240, 41, 41);
-    font-weight: 600;
-}
-
-.Authentication div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.Authentication div input {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 2px solid gray;
-    letter-spacing: 20px;
-    user-select: none;
-}
-
-.Authentication div input:active,
-input:focus {
-    outline: none;
-}
-
-.Authentication div #pin.shake {
-    animation: shake 50ms linear infinite;
-}
-
-@keyframes shake {
-    0% {
-        transform: translateX(2px);
-    }
-
-    30% {
-        transform: translateX(-2px);
-    }
-
-    70% {
-        transform: translateX(-2px);
-    }
-
-    100% {
-        transform: translateX(2px);
-    }
+.Whatsapp:active,
+#reset:active {
+    scale: 0.95;
 }
 
 .developer-credit {
@@ -476,8 +430,12 @@ input:focus {
         width: max-content;
     }
 
-    .Authentication {
-        transform: translate(0%, -100%);
+    .features .container{
+        margin-top: 2rem;
+        display: flex ;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
     }
 }
 
